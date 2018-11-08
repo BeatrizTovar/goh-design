@@ -1,28 +1,57 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Button, ButtonToolbar } from 'react-bootstrap'
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
-}
+const Index = () => <h2>Home</h2>;
+const About = () => <h2>About</h2>;
+const Users = () => <h2>Users</h2>;
 
-export default App;
+const AppRouter = () => (
+  <Router>
+    <div>
+      <nav>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/about/">About</Link>
+          </li>
+          <li>
+            <Link to="/users/">Users</Link>
+          </li>
+        </ul>
+      </nav>
+
+<ButtonToolbar>
+  {/* Standard button */}
+  <Button>Default</Button>
+
+  {/* Provides extra visual weight and identifies the primary action in a set of buttons */}
+  <Button bsStyle="primary">Primary</Button>
+
+  {/* Indicates a successful or positive action */}
+  <Button bsStyle="success">Success</Button>
+
+  {/* Contextual button for informational alert messages */}
+  <Button bsStyle="info">Info</Button>
+
+  {/* Indicates caution should be taken with this action */}
+  <Button bsStyle="warning">Warning</Button>
+
+  {/* Indicates a dangerous or potentially negative action */}
+  <Button bsStyle="danger">Danger</Button>
+
+  {/* Deemphasize a button by making it look like a link while maintaining button behavior */}
+  <Button bsStyle="link">Link</Button>
+</ButtonToolbar>;
+
+
+      <Route path="/" exact component={Index} />
+      <Route path="/about/" component={About} />
+      <Route path="/users/" component={Users} />
+    </div>
+  </Router>
+);
+
+export default AppRouter;
