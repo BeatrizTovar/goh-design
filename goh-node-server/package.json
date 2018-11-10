@@ -15,5 +15,8 @@
     "express": "^4.16.4",
     "tedious": "^3.0.1",
     "tedious-connection-pool": "^1.0.5"
+  },
+  "devDependencies": {
+    "ws": "3.3.2"
   }
 }

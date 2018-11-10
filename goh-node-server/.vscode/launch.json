@@ -13,3 +13,5 @@
         }
     ]
 }
+
+//error 183 fix: npm install ws@3.3.2 --save-dev --save-exact
