@@ -1,6 +1,6 @@
 import React from 'react'
 import { Form, FormGroup, FormControl, ControlLabel, Button } from 'react-bootstrap';
-// import * as contactService from '../'
+import * as contactService from '../service/contactService'
 
 class Contact extends React.Component {
     constructor(props){
@@ -11,6 +11,7 @@ class Contact extends React.Component {
             email: '',
             phone: '',
             event:'',
+            edit: false
         }
 
         this.onChange = this.onChange.bind(this);
@@ -23,17 +24,64 @@ class Contact extends React.Component {
         })
     }
 
+    componentDidMount() {
+        const id = this.props.match.params.id;
+        if(id) {
+            contactService.readById(id)
+                .then(response => {
+                    this.setState({
+                        firstName: response.item.firstName,
+                        lastName: response.item.lastName,
+                        email: response.item.email,
+                        phone: parseInt(response.item.phone),
+                        event: response.item.event,
+                        edit: true
+                    })
+                    console.log(response)
+                })
+                .catch(console.error)
+        }
+    }
+
     onSubmit() {
-        console.log('pressed!')
+        const formData = this.state;
+        const id = this.props.match.params.id;
+        let promise ={}
+
+        if( id && this.state.edit) {
+            promise = contactService.update(id, formData)
+        }
+        else {
+            promise = contactService.create(formData)
+        }
+        promise
+            .then(response => {
+                this.formReset()
+                this.props.history.goBack();
+                console.log(response)
+            })
+            .catch(console.error)
+    }
+
+    formReset() {
+        this.setState({
+            firstName: '',
+            lastName: '',
+            email: '',
+            phone: '',
+            event:'',
+            edit: false
+        })
     }
 
     render() {
         return (
             <React.Fragment>
+                {/* {console.log(this.props.history.goBack)} */}
                 <div className='container'>
                 <div className='row'>
                 <div className='col-sm-8'>
-                <span>CONTACT US</span><br/>
+                <span>CONTACT US</span><br/><br/>
                 </div>
                     </div>
                     <div className='row'>
@@ -41,7 +89,7 @@ class Contact extends React.Component {
                         <Form>
                             <FormGroup className='float-left' controlId="firstName">
                                 <ControlLabel>First Name </ControlLabel>&nbsp;
-                            <FormControl type="text" placeholder="first" name='firstName' value={this.state.firstName} onChange={this.onChange} />
+                            <FormControl type="text" placeholder="First" name='firstName' value={this.state.firstName} onChange={this.onChange} />
                             </FormGroup>
                         </Form>
                     </div>
@@ -50,7 +98,7 @@ class Contact extends React.Component {
                     <Form>
                             <FormGroup className='float-right' controlId="formInlineEmail">
                                 <ControlLabel>Last Name </ControlLabel>&nbsp;
-                            <FormControl type="text" placeholder="last" name='lastName' value={this.state.lastName} onChange={this.onChange} />
+                            <FormControl type="text" placeholder="Last" name='lastName' value={this.state.lastName} onChange={this.onChange} />
                             </FormGroup>
                             </Form>
                     </div>
@@ -72,7 +120,8 @@ class Contact extends React.Component {
                             <FormControl type="text" placeholder="ex. Coachella" name='event' value={this.state.event} onChange={this.onChange} />
                             </FormGroup>
                             {/* <div className='col-sm-8'> */}
-                                <Button style={{display: 'inlineBlock' }}className='btn btn-dark float-right' type='button' onClick={this.onSubmit}>Submit</Button>
+                                <Button style={{display: 'inlineBlock' }}className='btn btn-dark float-right' type='button' onClick={this.onSubmit}>
+                                {this.state.edit ? 'Edit' : 'Submit'}</Button>
                             {/* </div> */}
                         </Form>
                         </div>

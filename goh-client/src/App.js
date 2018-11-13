@@ -4,19 +4,25 @@ import Home from "./containers/components/Home";
 import NavbarTop from '../src/containers/components/Navbar'
 import './App.css'
 import Contact from '../src/containers/components/Contact'
+import ContentRouter from "./containers/components/ContentRouter";
 
 class App extends React.Component {
   render() {
     return (
-    <div className='App'>
-    <NavbarTop/>
-    <div className='App-header'>
-    <Contact />
-    </div>
-
-    </div>
+      <React.Fragment>
+          <NavbarTop />
+        <Router>
+          <ContentRouter />
+        </Router>
+      </React.Fragment>
     )
   }
 }
 
-export default App;
+export default App;    // <div className='App'>
+// <NavbarTop/>
+// <div className='App-header'>
+// <Contact />
+// </div>
+
+// </div>
