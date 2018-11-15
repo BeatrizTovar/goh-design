@@ -23,7 +23,6 @@ function readById (id) {
 }
 
 function readAll () {
-    debugger
     const promise = axios.get('/api/contact')
         .then(successResponse)
         .catch(errorResponse)

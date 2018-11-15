@@ -12,9 +12,8 @@ class NavbarTop extends React.Component {
                     </button>
                     <div className='collapse navbar-collapse' id='navItems'>
                         <div className='navbar-nav'>
-                        <a className='nav-item nav-link active' href='/'>One <span className='sr-only'>(current)</span></a>
-                        <a className='nav-item nav-link' href='/'>Two</a>
                         <a className='nav-item nav-link' href='/contact'>Contact Us</a>
+                        <a className='nav-item nav-link' href='/contact-list'>ContactList</a>
                         {/* <a className='nav-item nav-link disabled' href='/'>Disabled Link</a> */}
                         </div>
                     </div>

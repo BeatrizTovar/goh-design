@@ -1,6 +1,6 @@
- .App {
-  /* text-align: center; */
-  /* background-image: 'https://i.imgur.com/jQkeT0p.png'; */
+ /* .App {
+  text-align: center;
+  background-image: 'https://i.imgur.com/jQkeT0p.png';
   background-color: #282c34;
 }
 
@@ -31,4 +31,12 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+html body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-image: url('https://i.imgur.com/jQkeT0p.png');
+  color: #000;
 }

@@ -1,12 +1,15 @@
-import React, { Component } from 'react'
+import React from 'react'
 
 class Home extends React.Component {
 
     render() {
+        let image = 'https://i.imgur.com/jQkeT0p.png'
         return (
-            <div className='container'>
-                HOME
-            </div>
+            <React.Fragment>
+                <div className='container'>
+                lkasdhfjasdhfkjhjk
+                </div>
+            </React.Fragment>
         )
     }
 }

@@ -27,20 +27,26 @@ class Contact extends React.Component {
     componentDidMount() {
         const id = this.props.match.params.id;
         if(id) {
-            contactService.readById(id)
-                .then(response => {
-                    this.setState({
-                        firstName: response.item.firstName,
-                        lastName: response.item.lastName,
-                        email: response.item.email,
-                        phone: parseInt(response.item.phone),
-                        event: response.item.event,
-                        edit: true
-                    })
-                    console.log(response)
-                })
-                .catch(console.error)
+            this.readForm(id)
         }
+    }
+
+    readForm ( id) {
+        const promise = contactService.readById(id)
+        promise
+            .then(response => {
+                this.setState({
+                    firstName: response.item.firstName,
+                    lastName: response.item.lastName,
+                    email: response.item.email,
+                    phone: parseInt(response.item.phone),
+                    event: response.item.event,
+                    edit: true
+                })
+                console.log(response)
+            })
+            .catch(console.error)
+        return promise;
     }
 
     onSubmit() {
@@ -48,7 +54,7 @@ class Contact extends React.Component {
         const id = this.props.match.params.id;
         let promise ={}
 
-        if( id && this.state.edit) {
+        if(id && this.state.edit) {
             promise = contactService.update(id, formData)
         }
         else {
@@ -77,7 +83,6 @@ class Contact extends React.Component {
     render() {
         return (
             <React.Fragment>
-                {/* {console.log(this.props.history.goBack)} */}
                 <div className='container'>
                 <div className='row'>
                 <div className='col-sm-8'>
