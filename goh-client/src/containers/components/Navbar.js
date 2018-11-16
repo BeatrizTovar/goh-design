@@ -1,20 +1,25 @@
 import React from 'react'
+import {Nav, Navbar, NavItem, MenuItem, NavDropdown } from 'react-bootstrap'
+import {withRouter, NavLink} from 'react-router-dom'
 
 class NavbarTop extends React.Component {
-    render () {
+    render () {        
         return (
             <React.Fragment>
-                <nav className='navbar navbar-expand-lg navbar-dark bg-dark'>
-                    <a className='navbar-brand' href='/'>Home</a>
+                <nav className='goh_navbar'>
+                <NavLink to='/'
+                activeStyle={{
+                    fontWeight: 'bold',
+                    color: '#fff'
+                }}>Home</NavLink>
                     <button className='navbar-toggler' type='button' data-toggle='collapse' data-target='#navItems'
                         aria-controls='navItems' aria-expanded='false' aria-label='Toggle navigation'>
                         <span className='navbar-toggler-icon'></span>
                     </button>
                     <div className='collapse navbar-collapse' id='navItems'>
                         <div className='navbar-nav'>
-                        <a className='nav-item nav-link' href='/contact'>Contact Us</a>
-                        <a className='nav-item nav-link' href='/contact-list'>ContactList</a>
-                        {/* <a className='nav-item nav-link disabled' href='/'>Disabled Link</a> */}
+                        <NavLink to='/contact'>Contact</NavLink>
+                        <NavLink to='/contact-list'>Contact Us</NavLink>
                         </div>
                     </div>
                 </nav>
@@ -23,4 +28,4 @@ class NavbarTop extends React.Component {
     }
 }
 
-export default NavbarTop;
+export default withRouter(NavbarTop);
