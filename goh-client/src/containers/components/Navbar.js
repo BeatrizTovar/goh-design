@@ -10,7 +10,8 @@ class NavbarTop extends React.Component {
                 <NavLink to='/'
                 activeStyle={{
                     fontWeight: 'bold',
-                    color: '#fff'
+                    color: '#fff',
+                    fontFamily:'typeface-allerta-stencil'
                 }}>Home</NavLink>
                     <button className='navbar-toggler' type='button' data-toggle='collapse' data-target='#navItems'
                         aria-controls='navItems' aria-expanded='false' aria-label='Toggle navigation'>

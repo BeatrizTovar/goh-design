@@ -1,13 +1,13 @@
 import React from 'react'
+import 'typeface-allerta-stencil'
 
 class Home extends React.Component {
 
     render() {
-        let image = 'https://i.imgur.com/jQkeT0p.png'
         return (
             <React.Fragment>
                 <div className='container'>
-                lkasdhfjasdhfkjhjk
+                <h1 >Some Text Goes Here NNNNNNNNNg</h1>
                 </div>
             </React.Fragment>
         )

@@ -48,10 +48,11 @@ html body {
   height: 60px;
   margin-bottom: 35px;
   text-align: center;
-  font-weight: bold;
+  /* font-weight: bold; */
+  font-size: 45px; 
   font-family: 'Allerta Stencil'
 }
-
-@font-face {
+/* 
+html h1 {
   font-family: 'Allerta Stencil'
-}
+} */

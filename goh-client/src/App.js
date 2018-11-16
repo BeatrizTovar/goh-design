@@ -1,16 +1,15 @@
 import React from "react";
 import { BrowserRouter as Router } from "react-router-dom";
-import NavbarTop from '../src/containers/components/Navbar'
 import './App.css'
-import ContentRouter from "./containers/components/ContentRouter";
+import Layout from '../src/containers/components/Layout'
+import 'typeface-spicy-rice'
 
 class App extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <NavbarTop />
         <Router>
-          <ContentRouter />
+          <Layout/>
         </Router>
       </React.Fragment>
     )
