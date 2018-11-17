@@ -45,12 +45,23 @@ html body {
 
 .goh_navbar {
   background-color: #0b192b8f;
-  height: 60px;
+  height: 90px;
   margin-bottom: 35px;
+  margin-top: 40px;
+  padding: 15px 0;
   text-align: center;
-  /* font-weight: bold; */
-  font-size: 45px; 
   font-family: 'Allerta Stencil'
+}
+
+.goh_text {
+  color: #f5f6fa;
+  font-size: 60px; 
+  line-height: 1;
+  letter-spacing: 15px;
+}
+
+.goh_text:hover {
+  text-decoration: none;
 }
 /* 
 html h1 {

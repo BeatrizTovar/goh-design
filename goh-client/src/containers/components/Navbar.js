@@ -6,14 +6,11 @@ class NavbarTop extends React.Component {
     render () {        
         return (
             <React.Fragment>
+                <div className='container-fluid'>
                 <nav className='goh_navbar'>
-                <NavLink to='/'
-                activeStyle={{
-                    fontWeight: 'bold',
-                    color: '#fff',
-                    fontFamily:'typeface-allerta-stencil'
-                }}>Home</NavLink>
-                    <button className='navbar-toggler' type='button' data-toggle='collapse' data-target='#navItems'
+                <NavLink to='/' className='goh_text'>G O H</NavLink>
+
+                    {/* <button className='navbar-toggler' type='button' data-toggle='collapse' data-target='#navItems'
                         aria-controls='navItems' aria-expanded='false' aria-label='Toggle navigation'>
                         <span className='navbar-toggler-icon'></span>
                     </button>
@@ -22,8 +19,9 @@ class NavbarTop extends React.Component {
                         <NavLink to='/contact'>Contact</NavLink>
                         <NavLink to='/contact-list'>Contact Us</NavLink>
                         </div>
-                    </div>
+                    </div> */}
                 </nav>
+                </div>
             </React.Fragment>
         )
     }
