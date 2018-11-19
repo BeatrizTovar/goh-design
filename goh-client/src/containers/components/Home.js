@@ -1,13 +1,14 @@
-import React from 'react'
-import 'typeface-allerta-stencil'
+import React from 'react';
+import 'typeface-allerta-stencil';
+import Polaroids from './Polaroids';
 
 class Home extends React.Component {
 
     render() {
         return (
             <React.Fragment>
-                <div className='container'>
-                {/* <h1 >Some Text Goes Here NNNNNNNNNg</h1> */}
+                <div className="home_container">
+                    <Polaroids />
                 </div>
             </React.Fragment>
         )

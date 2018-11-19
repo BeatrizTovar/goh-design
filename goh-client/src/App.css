@@ -37,12 +37,16 @@ html body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background-image: url('https://i.imgur.com/jQkeT0p.png');
+  /* background-image: url('https://i.imgur.com/jQkeT0p.png');  */
+  background-image: url('./images/p5162592.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   color: #fff;
 }
 
+.container-fluid {
+  padding: 0;
+}
 .goh_navbar {
   background-color: #0b192b8f;
   height: 90px;
@@ -54,16 +58,46 @@ html body {
 }
 
 .goh_text {
-  color: #f5f6fa;
+  color: #d4d4d4;
   font-size: 60px; 
   line-height: 1;
   letter-spacing: 15px;
 }
 
 .goh_text:hover {
+  color: #1F4678;
   text-decoration: none;
+  font-size: 70px;
 }
-/* 
-html h1 {
-  font-family: 'Allerta Stencil'
-} */
+
+.example {
+  -webkit-columns: 3;
+  -moz-columns: 3;
+  columns: 3;
+  -webkit-column-gap: 5em;
+  -moz-column-gap: 5em;
+  column-gap: 5em;
+  max-width: 450px;
+  margin: 3em auto 0;
+}
+
+.home_container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  /* grid-gap: 5px; */
+  box-sizing: border-box;
+  height: 500px;
+  width: 100%;
+  /* background-color: #8cffa0; */
+  /* padding: 10px; */
+  row-gap: 30px;
+  column-gap: 120px;
+  padding: 0 120px;
+
+}
+
+.home_container > div {
+  /* background-color: #00000012; */
+  background-color: #000000;
+  padding: 5px;
+}
