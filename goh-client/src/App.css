@@ -72,15 +72,13 @@ html body {
 }
 
 .home_container {
+  text-align: center;
   justify-content: center;
   display: grid;
   grid-template-columns: 15em 15em 15em;
-  /* grid-gap: 5px; */
   box-sizing: border-box;
   height: 560px;
   width: 100%;
-  /* background-color: #8cffa0; */
-  /* padding: 10px; */
   row-gap: 30px;
   column-gap: 120px;
   padding: 0 120px;
@@ -94,4 +92,16 @@ html body {
   box-shadow: 4px 2px 9px 3px #0c0d0a8f;
 }
 
+.goh_inner {
+  height: 80%;
+  background-color: #000;
+  margin: 10px;
+  margin-bottom: 0;
+}
+
+.goh_inner_text {
+  font-family: 'Shadows Into Light';
+  font-size: 25px;
+  color: #000;
+}
 /* 0c0d0a8f */

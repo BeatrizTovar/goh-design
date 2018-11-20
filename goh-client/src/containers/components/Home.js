@@ -1,5 +1,4 @@
 import React from 'react';
-import 'typeface-allerta-stencil';
 import Polaroids from './Polaroids';
 
 class Home extends React.Component {

@@ -3,6 +3,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import './App.css'
 import Layout from '../src/containers/components/Layout'
 import 'typeface-spicy-rice'
+import 'typeface-shadows-into-light'
 
 class App extends React.Component {
   render() {
