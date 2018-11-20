@@ -5,7 +5,7 @@ class Polaroids extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <div >1</div>
+                <div><div>1  </div></div>
                 <div >2</div>
                 <div >3</div>
                 <div >1.1</div>
