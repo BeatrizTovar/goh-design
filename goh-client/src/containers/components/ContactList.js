@@ -9,6 +9,7 @@ class ContactList extends React.Component {
             list:[]
         }
         this.deleteEntry = this.deleteEntry.bind(this);
+        this.editEntry = this.editEntry.bind(this);
     }
 
     componentDidMount() {
@@ -37,6 +38,10 @@ class ContactList extends React.Component {
             })
             .catch(console.error)
     }
+
+    editEntry(e, entryId) {
+        this.props.history.push('/contact/'+ entryId);
+    }
     render() {
         const formattedList = this.state.list 
             ? this.state.list.map(item => {
@@ -48,6 +53,7 @@ class ContactList extends React.Component {
                 <td>{item.email}</td>
                 <td>{item.event}</td>
                 <td><Button onClick={e => this.deleteEntry(e, item.id)}>delete</Button></td> 
+                <td><Button onClick={e => this.editEntry(e, item.id)}>edit</Button></td> 
                 </tr>
                 )
             })
@@ -68,6 +74,7 @@ class ContactList extends React.Component {
                                         <th>Phone</th>
                                         <th>Email</th>
                                         <th>Event</th>
+                                        <th></th>
                                         <th></th>
                                     </tr>
                                 </thead>

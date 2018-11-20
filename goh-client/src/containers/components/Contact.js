@@ -1,6 +1,7 @@
-import React from 'react'
+import React from 'react';
 import { Form, FormGroup, FormControl, ControlLabel, Button } from 'react-bootstrap';
-import * as contactService from '../service/contactService'
+import * as contactService from '../service/contactService';
+import swal from 'sweetalert2'
 
 class Contact extends React.Component {
     constructor(props){
@@ -63,7 +64,8 @@ class Contact extends React.Component {
         promise
             .then(response => {
                 this.formReset()
-                this.props.history.goBack();
+                this.submitConfirmation()
+                // this.props.history.goBack();
                 console.log(response)
             })
             .catch(console.error)
@@ -76,13 +78,30 @@ class Contact extends React.Component {
             email: '',
             phone: '',
             event:'',
-            edit: false
+        })
+    }
+
+    submitConfirmation() {
+        let message = this.state.edit ? 'Edit Successful' : 'You Form Has Been Submitted'
+        debugger
+        swal({
+            type: 'success',
+            title: 'Success!',
+            text: message,
+            showConfirmButton: true,
+            confirmButtonText: 'Show Contact List'
+        }).then(result => {
+            if (result.value) {
+                this.setState({ edit: false })
+                this.props.history.push('/contact-list')
+            }
         })
     }
 
     render() {
         return (
             <React.Fragment>
+       
                 <div className='container'>
                 <div className='row'>
                 <div className='col-sm-8'>
@@ -124,14 +143,12 @@ class Contact extends React.Component {
                                 <ControlLabel>Event </ControlLabel>&nbsp;
                             <FormControl type="text" placeholder="ex. Coachella" name='event' value={this.state.event} onChange={this.onChange} />
                             </FormGroup>
-                            {/* <div className='col-sm-8'> */}
                                 <Button style={{display: 'inlineBlock' }}className='btn btn-dark float-right' type='button' onClick={this.onSubmit}>
                                 {this.state.edit ? 'Edit' : 'Submit'}</Button>
-                            {/* </div> */}
                         </Form>
                         </div>
                     </div>
-                </div>
+                </div> 
             </React.Fragment>
         )
     }

@@ -49,7 +49,7 @@ html body {
   padding: 0;
 }
 .goh_navbar {
-  background-color: #0b192b8f;
+  background-color: #00000012;
   height: 90px;
   margin-bottom: 35px;
   margin-top: 20px;
@@ -103,5 +103,26 @@ html body {
   font-family: 'Shadows Into Light';
   font-size: 25px;
   color: #000;
+  font-style: oblique;
+  cursor: pointer;
 }
 /* 0c0d0a8f */
+.goh_contact {
+  width: 50%;
+  display: grid;
+  justify-content: center;
+  margin: auto; 
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.box div {
+  width: 100px;
+  height: 100px;
+  background-color: #000;
+}
+      
