@@ -1,7 +1,7 @@
 import React from 'react';
 import * as contactService from '../service/contactService'; 
 import { Table, Button } from 'react-bootstrap';
-
+import swal from 'sweetalert2';
 class ContactList extends React.Component {
     constructor(props){
         super(props)
@@ -10,6 +10,7 @@ class ContactList extends React.Component {
         }
         this.deleteEntry = this.deleteEntry.bind(this);
         this.editEntry = this.editEntry.bind(this);
+        this.deleteConfirmation = this.deleteConfirmation.bind(this);
     }
 
     componentDidMount() {
@@ -29,8 +30,8 @@ class ContactList extends React.Component {
         return promise;
     }
 
-    deleteEntry(e, entryId) {
-        const promise = contactService.del(entryId)
+    deleteEntry(e) {
+        const promise = contactService.del(e)
         promise
             .then(response => {
                 this.getList();
@@ -42,6 +43,22 @@ class ContactList extends React.Component {
     editEntry(e, entryId) {
         this.props.history.push('/contact/'+ entryId);
     }
+
+    deleteConfirmation (e, entryId) {
+        debugger
+        swal ({
+            type: 'info',
+            title: 'Are You Sure?',
+            text: 'Action cannot be undone',
+            showConfirmButton: true,
+            showCancelButton: true,
+        }).then(result => {
+            if(result.value) {
+                this.deleteEntry(entryId)
+            }
+        })
+    }
+
     render() {
         const formattedList = this.state.list 
             ? this.state.list.map(item => {
@@ -52,7 +69,7 @@ class ContactList extends React.Component {
                 <td>{item.phone}</td>
                 <td>{item.email}</td>
                 <td>{item.event}</td>
-                <td><Button onClick={e => this.deleteEntry(e, item.id)}>delete</Button></td> 
+                <td><Button onClick={e => this.deleteConfirmation(e, item.id)}>delete</Button></td> 
                 <td><Button onClick={e => this.editEntry(e, item.id)}>edit</Button></td> 
                 </tr>
                 )
