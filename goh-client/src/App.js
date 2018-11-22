@@ -4,6 +4,7 @@ import './App.css'
 import Layout from '../src/containers/components/Layout'
 import 'typeface-spicy-rice'
 import 'typeface-shadows-into-light'
+import 'typeface-black-han-sans'
 
 class App extends React.Component {
   render() {

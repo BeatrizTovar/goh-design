@@ -32,7 +32,7 @@ class Contact extends React.Component {
         }
     }
 
-    readForm ( id) {
+    readForm (id) {
         const promise = contactService.readById(id)
         promise
             .then(response => {

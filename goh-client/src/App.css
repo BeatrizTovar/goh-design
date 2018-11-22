@@ -55,7 +55,7 @@ html body {
   margin-top: 20px;
   padding: 15px 0;
   text-align: center;
-  font-family: 'Allerta Stencil'
+  font-family: 'Black Han Sans'
 }
 
 .goh_text {
@@ -125,4 +125,15 @@ html body {
   height: 100px;
   background-color: #000;
 }
-      
+
+.list_container {
+  margin: auto;
+  display: flex;
+  background-color: #b5b7acad;
+  justify-content: center;
+  width: auto;
+  /* font-family: 'Shadows Into Light'; */
+  font-weight: 500;
+  font-size: 18px;
+  color: #000;
+}

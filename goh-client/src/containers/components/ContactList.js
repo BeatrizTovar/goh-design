@@ -80,7 +80,7 @@ class ContactList extends React.Component {
 
         return(
             <React.Fragment>
-                <div className='container'>
+                <div className='list_container'>
                     <div className='row'>
                         <div className='col-sm-9'>
                             <Table hover condensed>
