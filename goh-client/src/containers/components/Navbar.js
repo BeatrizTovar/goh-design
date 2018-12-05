@@ -8,7 +8,7 @@ class NavbarTop extends React.Component {
             <React.Fragment>
                 <div className='container-fluid'>
                     <nav className='goh_navbar'>
-                        <NavLink to='/' className='goh_text'>G O H</NavLink>
+                        <NavLink to='/' className='goh_text'>Remember when...</NavLink>
                     </nav>
                 </div>
             </React.Fragment>

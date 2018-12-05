@@ -114,18 +114,6 @@ html body {
   margin: auto; 
 }
 
-.box {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.box div {
-  width: 100px;
-  height: 100px;
-  background-color: #000;
-}
-
 .list_container {
   margin: auto;
   display: flex;
@@ -136,4 +124,30 @@ html body {
   font-weight: 500;
   font-size: 18px;
   color: #000;
+}
+
+.mail {
+  position: fixed;
+  bottom: 17px;
+  width: 265px;
+  height: 90px;
+  background-color: #d1cab694;
+  left: 10px;
+  border-radius: 13px;
+  text-align: center;
+}
+
+.mail-text {
+  position: relative;
+  top: 7px;
+  color: #f2f2f2;
+  cursor: default;
+}
+
+/* overrides default input styling */
+.mail_email {
+  width: 80% !important;
+  display: initial !important;
+  margin-top: 5px;
+  background-color: #ececec !important;
 }

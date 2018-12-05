@@ -1,5 +1,6 @@
 import React from 'react';
 import Polaroids from './Polaroids';
+import MailingList from './MailingList';
 
 class Home extends React.Component {
 
@@ -8,6 +9,9 @@ class Home extends React.Component {
             <React.Fragment>
                 <div className="home_container">
                     <Polaroids />
+                </div>
+                <div>
+                    <MailingList />
                 </div>
             </React.Fragment>
         )
