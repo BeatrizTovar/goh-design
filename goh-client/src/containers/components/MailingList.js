@@ -14,6 +14,7 @@ class MailingList extends React.Component {
     enterKey(e){
         if(e.key === 'Enter'){
             console.log(this.state.email)
+            console.log(e)
         }
     }
     handleChange(e){
