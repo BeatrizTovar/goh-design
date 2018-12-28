@@ -45,7 +45,6 @@ class ContactList extends React.Component {
     }
 
     deleteConfirmation (e, entryId) {
-        debugger
         swal ({
             type: 'info',
             title: 'Are You Sure?',

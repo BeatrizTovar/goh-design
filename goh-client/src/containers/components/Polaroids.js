@@ -10,28 +10,28 @@ class Polaroids extends React.Component {
         return (
             <React.Fragment>
                 <div>
-                    <div className='goh_inner'>1</div>
-                    <span className='goh_inner_text'>Bio</span>
+                    <div className='goh_inner'></div>
+                    <span className='goh_inner_text'>Sample</span>
                 </div>
                 <div>
-                    <div className='goh_inner'>2  </div>
-                    <span className='goh_inner_text'>Collection</span>
+                    <div className='goh_inner'>  </div>
+                    <span className='goh_inner_text'>Sample</span>
                 </div>
                 <div>
-                    <div className='goh_inner'>3 </div>
-                    <span className='goh_inner_text'>Merch</span>
+                    <div className='goh_inner'> </div>
+                    <span className='goh_inner_text'>Sample</span>
                 </div>
                 <div>
-                    <div className='goh_inner'>4  </div>
-                    <span className='goh_inner_text'>Live</span>
+                    <div className='goh_inner'>  </div>
+                    <span className='goh_inner_text'>Sample</span>
                 </div>
                 <div>
-                    <div className='goh_inner'>5  </div>
-                    <span className='goh_inner_text'>News</span>
+                    <div className='goh_inner'>  </div>
+                    <span className='goh_inner_text'>Sample</span>
                 </div>
                 <div>
-                    <div className='goh_inner'>6  </div>
-                    <span className='goh_inner_text' onClick={e => this.props.history.push('/contact')}>Contact Us</span>
+                    <div className='goh_inner'>  </div>
+                    <span className='goh_inner_text' onClick={e => this.props.history.push('/contact')}>Sample</span>
                 </div>
             </React.Fragment>
         )

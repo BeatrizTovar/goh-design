@@ -11,7 +11,7 @@ class Home extends React.Component {
                     <Polaroids />
                 </div>
                 <div>
-                    <MailingList />
+                    {/* <MailingList /> */}
                 </div>
             </React.Fragment>
         )
